@@ -1,0 +1,13 @@
+# render.yaml  – Render.com deployment configuration
+# Push this file to GitHub, then connect the repo in Render dashboard.
+# Render reads this file and sets everything up automatically.
+
+services:
+  - type: web                        # a web service (HTTP)
+    name: baraem-kindergarten        # service display name in Render
+    runtime: python                  # we're using Python
+    buildCommand: pip install -r requirements.txt   # install deps
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT  # start server
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"

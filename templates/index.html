@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║   روضة البراعم – العمران الأعلى                         ║
+  ║   Jardin d'enfants El Baraem – Al Omran Al A'la          ║
+  ║                                                          ║
+  ║   Template rendered by Jinja2 / FastAPI                  ║
+  ║   Styles  → /static/css/style.css                        ║
+  ║   Scripts → /static/js/main.js                           ║
+  ║   Language: Arabic (RTL primary) + French                ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>روضة البراعم – العمران الأعلى | Jardin El Baraem</title>
+  <meta name="description"
+    content="روضة البراعم – العمران الأعلى. بيئة تعليمية آمنة وممتعة لأطفالكم. Jardin d'enfants El Baraem, un environnement sûr et ludique pour vos enfants." />
+
+  <!-- Google Fonts: Tajawal (Arabic) + Nunito (French) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome icons (CDN) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ▶ Our own stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOP BAR  – phone & social quick links
+  ═══════════════════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container">
+      <span>
+        <i class="fas fa-phone-alt"></i>
+        <!-- ▶ Replace with the kindergarten's actual phone number -->
+        &nbsp;+213 XX XX XX XX
+      </span>
+      <div class="topbar-icons">
+        <a href="https://www.facebook.com/p/El-Baraem-100063848190245/"
+           target="_blank" rel="noopener" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- Add WhatsApp / Instagram links here when available -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo">
+        <img src="/static/images/logo.jpg" alt="شعار روضة البراعم – Logo El Baraem" />
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">من نحن <span class="fr" style="display:inline">/ À propos</span></a></li>
+        <li><a href="#programs">برامجنا <span class="fr" style="display:inline">/ Programmes</span></a></li>
+        <li><a href="#why">مميزاتنا <span class="fr" style="display:inline">/ Pourquoi nous</span></a></li>
+        <li><a href="#gallery">معرض <span class="fr" style="display:inline">/ Galerie</span></a></li>
+        <li><a href="#contact">تواصل معنا <span class="fr" style="display:inline">/ Contact</span></a></li>
+      </ul>
+
+      <!-- Mobile hamburger – toggled by main.js -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="container">
+
+      <!-- Text column -->
+      <div class="hero-text">
+        <h1>
+          مرحباً بكم في
+          <span class="c1">روضة</span>
+          <span class="c2">البراعم</span>
+          <br />
+          <span class="c3">العمران الأعلى</span>
+        </h1>
+        <p class="sub-ar">بيئة تعليمية آمنة، ممتعة وملوّنة لأطفالكم الصغار.</p>
+        <p class="sub-fr">Un environnement sûr, ludique et coloré pour vos tout-petits.</p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> تواصل معنا
+          </a>
+          <a href="#about" class="btn btn-outline">
+            <i class="fas fa-info-circle"></i> اعرف أكثر
+          </a>
+        </div>
+      </div>
+
+      <!-- Logo illustration (floats via CSS animation) -->
+      <div class="hero-image">
+        <img src="/static/images/logo.jpg" alt="روضة البراعم" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATS BAR
+       ▶ Update numbers to match the real kindergarten
+  ═══════════════════════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stat-item">
+        <div class="num">+150</div>
+        <div class="lbl-ar">طفل سعيد</div>
+        <div class="lbl-fr">enfants heureux</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">10+</div>
+        <div class="lbl-ar">سنوات خبرة</div>
+        <div class="lbl-fr">ans d'expérience</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">15</div>
+        <div class="lbl-ar">مربية متخصصة</div>
+        <div class="lbl-fr">éducatrices spécialisées</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">5</div>
+        <div class="lbl-ar">فصول تعليمية</div>
+        <div class="lbl-fr">classes éducatives</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════════════ -->
+  <section class="about section reveal" id="about">
+    <div class="container">
+
+      <!-- ▶ Replace logo with a real school photo when available -->
+      <div class="about-image-wrap">
+        <img src="/static/images/logo.jpg" alt="روضة البراعم" style="width:100%;border-radius:24px;" />
+      </div>
+
+      <div class="about-text">
+        <div class="section-title" style="text-align:right;margin-bottom:24px;">
+          <h2 style="text-align:right">من نحن؟</h2>
+        </div>
+
+        <p class="fr-p">
+          Jardin d'enfants El Baraem – Al Omran Al A'la est un établissement dédié à l'épanouissement
+          des enfants dans un cadre bienveillant, sécurisé et stimulant.
+        </p>
+        <p>
+          روضة البراعم – العمران الأعلى، مؤسسة تعليمية متخصصة في رعاية وتنشئة أطفال مرحلة ما قبل المدرسة.
+          نوفر بيئة آمنة ومحفزة تدعم النمو العقلي والعاطفي والجسدي لكل طفل.
+        </p>
+        <p>
+          يعمل في روضتنا طاقم من المربيات المؤهلات اللواتي يتعاملن مع كل طفل بمحبة وصبر،
+          مستخدمات أحدث أساليب التعليم التفاعلي واللعب الهادف.
+        </p>
+        <br/>
+        <a href="#contact" class="btn btn-primary" style="display:inline-flex">
+          <i class="fas fa-calendar-check"></i>&nbsp;احجز زيارة الآن
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROGRAMS / ACTIVITIES
+  ═══════════════════════════════════════════════════════ -->
+  <section class="programs section" id="programs">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>برامجنا التعليمية</h2>
+        <span class="fr">Nos Programmes Éducatifs</span>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="card reveal" style="border-top-color:var(--clr-orange)">
+          <div class="card-icon">🎨</div>
+          <h3>الفنون والإبداع</h3>
+          <span class="fr">Arts & Créativité</span>
+          <p>رسم، تلوين، نمذجة الصلصال وأنشطة تنمي الخيال والإبداع لدى الطفل.</p>
+        </div>
+
+        <div class="card reveal" style="border-top-color:var(--clr-green)">
+          <div class="card-icon">📚</div>
+          <h3>التهيئة للقراءة والكتابة</h3>
+          <span class="fr">Pré-lecture & Écriture</span>
+          <p>أنشطة ممتعة لتحضير الأطفال لدخول المدرسة الابتدائية بثقة واستعداد.</p>
+        </div>
+
+        <div class="card reveal" style="border-top-color:var(--clr-red)">
+          <div class="card-icon">🎵</div>
+          <h3>الموسيقى والأناشيد</h3>
+          <span class="fr">Musique & Chants</span>
+          <p>أغاني تعليمية وإيقاعات تنمي المهارات اللغوية وحب الفن لدى الطفل.</p>
+        </div>
+
+        <div class="card reveal" style="border-top-color:var(--clr-yellow)">
+          <div class="card-icon">⚽</div>
+          <h3>النشاط البدني واللعب</h3>
+          <span class="fr">Activité Physique & Jeux</span>
+          <p>ألعاب جماعية وحركية تعزز اللياقة البدنية والروح الرياضية والتعاون.</p>
+        </div>
+
+        <div class="card reveal" style="border-top-color:var(--clr-brown)">
+          <div class="card-icon">🌍</div>
+          <h3>اللغة الفرنسية</h3>
+          <span class="fr">Initiation au Français</span>
+          <p>تعلم اللغة الفرنسية بطرق تفاعلية وممتعة تناسب مرحلة الطفولة المبكرة.</p>
+        </div>
+
+        <div class="card reveal" style="border-top-color:var(--clr-orange)">
+          <div class="card-icon">🔢</div>
+          <h3>التهيئة للرياضيات</h3>
+          <span class="fr">Éveil aux Mathématiques</span>
+          <p>مفاهيم الأعداد والأشكال والألوان من خلال الألعاب والأنشطة اليومية.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       WHY US
+  ═══════════════════════════════════════════════════════ -->
+  <section class="why section" id="why">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>لماذا تختار روضتنا؟</h2>
+        <span class="fr">Pourquoi choisir El Baraem ?</span>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-orange)"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h4>بيئة آمنة ومراقبة</h4>
+            <span class="fr">Environnement sûr et surveillé</span>
+            <p>مراقبة مستمرة وبيئة خالية من أي مخاطر لضمان سلامة أطفالكم.</p>
+          </div>
+        </div>
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-green)"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div>
+            <h4>مربيات متخصصات ومؤهلات</h4>
+            <span class="fr">Éducatrices qualifiées & passionnées</span>
+            <p>فريق تربوي متمرس يمتلك خبرة واسعة في التعامل مع الأطفال.</p>
+          </div>
+        </div>
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-red)"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <h4>منهج تعليمي متكامل</h4>
+            <span class="fr">Programme éducatif complet</span>
+            <p>منهج يوازن بين اللعب والتعلم لتنمية جميع جوانب شخصية الطفل.</p>
+          </div>
+        </div>
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-yellow)"><i class="fas fa-heart"></i></div>
+          <div>
+            <h4>جو عائلي دافئ</h4>
+            <span class="fr">Ambiance familiale chaleureuse</span>
+            <p>نعامل كل طفل كأنه فرد من عائلتنا لضمان راحته وانتمائه.</p>
+          </div>
+        </div>
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-brown)"><i class="fas fa-utensils"></i></div>
+          <div>
+            <h4>وجبات صحية ومتوازنة</h4>
+            <span class="fr">Repas sains & équilibrés</span>
+            <p>قائمة غذائية مدروسة تضمن تغذية جيدة لدعم نمو الطفل.</p>
+          </div>
+        </div>
+
+        <div class="why-item reveal">
+          <div class="why-icon" style="background:var(--clr-orange)"><i class="fas fa-comments"></i></div>
+          <div>
+            <h4>تواصل مستمر مع الأولياء</h4>
+            <span class="fr">Communication régulière avec les parents</span>
+            <p>نحرص على إبقاء الأولياء على اطلاع دائم بتطور أبنائهم.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       GALLERY
+       ▶ Replace the emoji <div> tiles with real <img> tags
+         once you have actual photos of the kindergarten.
+         Example:
+           <div class="gallery-tile reveal">
+             <img src="/static/images/photo1.jpg" alt="وصف الصورة"
+                  style="width:100%;height:100%;object-fit:cover;" />
+           </div>
+  ═══════════════════════════════════════════════════════ -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>معرض الصور</h2>
+        <span class="fr">Galerie Photos</span>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-tile reveal">🎨</div>
+        <div class="gallery-tile reveal" style="background:linear-gradient(135deg,var(--clr-green),#A8E6A0)">🌱</div>
+        <div class="gallery-tile reveal" style="background:linear-gradient(135deg,var(--clr-red),#F7A0A0)">🎵</div>
+        <div class="gallery-tile reveal" style="background:linear-gradient(135deg,var(--clr-brown),#C08060)">📚</div>
+        <div class="gallery-tile reveal" style="background:linear-gradient(135deg,#6EC6E6,#A0D8EF)">⚽</div>
+        <div class="gallery-tile reveal" style="background:linear-gradient(135deg,var(--clr-yellow),#FFD97D)">🔢</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+
+      <!-- Info column -->
+      <div class="contact-info reveal">
+        <h3>معلومات التواصل</h3>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <strong>العنوان</strong>
+            <!-- ▶ Update with the exact address -->
+            <span>العمران الأعلى – الجزائر</span>
+            <span class="fr">Al Omran Al A'la – Algérie</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <strong>الهاتف</strong>
+            <!-- ▶ Update phone number -->
+            <span dir="ltr">+213 XX XX XX XX</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <strong>ساعات العمل</strong>
+            <!-- ▶ Update working hours -->
+            <span>الأحد – الخميس: 07:30 – 16:30</span>
+            <span class="fr">Dim – Jeu : 07h30 – 16h30</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/p/El-Baraem-100063848190245/"
+             target="_blank" rel="noopener"
+             class="social-btn social-btn--fb">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <!--
+          ▶ Uncomment and fill in when WhatsApp is available:
+          <a href="https://wa.me/213XXXXXXXX" target="_blank"
+             class="social-btn" style="background:#25D366;color:#fff">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          -->
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="contact-form reveal">
+        <h3>
+          أرسل لنا رسالة
+          <span class="fr" style="display:inline;font-size:.8rem;color:var(--clr-orange)">
+            / Envoyez-nous un message
+          </span>
+        </h3>
+
+        <div class="form-group">
+          <label for="name">
+            الاسم الكامل <span class="fr">Nom complet</span>
+          </label>
+          <input type="text" id="name" placeholder="أدخل اسمك الكامل" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">
+            رقم الهاتف <span class="fr">Numéro de téléphone</span>
+          </label>
+          <input type="tel" id="phone" placeholder="0X XX XX XX XX" dir="ltr" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">
+            رسالتك <span class="fr">Votre message</span>
+          </label>
+          <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+        </div>
+
+        <!-- onclick calls sendContact() defined in main.js -->
+        <button class="btn btn-primary" id="sendBtn"
+                onclick="sendContact()" style="width:100%;justify-content:center;">
+          <i class="fas fa-paper-plane"></i>&nbsp;إرسال الرسالة
+        </button>
+
+        <!-- Feedback message – shown/hidden by main.js -->
+        <div id="form-msg"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <img src="/static/images/logo.jpg" alt="روضة البراعم" />
+      <p>روضة البراعم – العمران الأعلى</p>
+      <span class="fr">Jardin d'enfants El Baraem – Al Omran Al A'la</span>
+      <p class="copy">
+        &copy; <span id="year"></span> جميع الحقوق محفوظة | Tous droits réservés
+      </p>
+    </div>
+  </footer>
+
+  <!-- ▶ Our own JavaScript (loaded last so the DOM is ready) -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>
