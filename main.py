@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware 
+from db import connect_db, disconnect_db , pool
 
 app = FastAPI()
 
@@ -23,6 +24,14 @@ class ContactMessage(BaseModel):
     message: str
 
 
+@app.on_event("startup")
+async def startup_event():
+    await connect_db()
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    await disconnect_db()   
+
 @app.get("/")
 async def home():
     return FileResponse("templates/index.html")
@@ -31,7 +40,10 @@ async def home():
 @app.post("/api/contact")
 async def contact(data: ContactMessage):
 
-    print(f"{data.name} | {data.phone} | {data.message}")
+    await pool.execute(
+        "INSERT INTO contact_messages (name, phone, message) VALUES ($1, $2, $3)",
+        data.name, data.phone, data.message
+    )
 
     return JSONResponse({
         "success": True,

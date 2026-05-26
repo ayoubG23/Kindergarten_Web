@@ -2,17 +2,23 @@
 # PostgreSQL raw connection test
 # -----------------------------------------------------------
 
-import psycopg2
+import asyncpg
 import os
 from dotenv import load_dotenv
 
-# Load variables from .env
+
 load_dotenv()
 
-# Get PostgreSQL URL
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Connect to PostgreSQL
-conn = psycopg2.connect(DATABASE_URL)
+# Global connection pool variable
+pool=None
+async def connect_db():
+    global pool
+    pool = await asyncpg.create_pool(DATABASE_URL, min_size=1, max_size=10)
 
-print("Connected successfully!")
+async def disconnect_db():
+    global pool
+    if pool:
+        await pool.close()
+
