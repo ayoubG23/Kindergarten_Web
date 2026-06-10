@@ -5,19 +5,17 @@ from pydantic import BaseModel
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware 
 import db
+from contextlib import asynccontextmanager
 
-app = FastAPI()
 
-@app.on_event("startup")
-async def startup():
+@asynccontextmanager
+async def lifespan(app):
     await db.connect_db()
-
-@app.on_event("shutdown")
-async def shutdown():
+    yield
     await db.disconnect_db()
 
 
-
+app = FastAPI(lifespan=lifespan)
 
 
 app.add_middleware(
@@ -44,9 +42,8 @@ async def home():
 
 @app.post("/api/contact")
 async def recieveMsg(msg:ContactMessage):
-    pool =db.getpool()
     query=""" INSERT INTO contact_messages (name,phone,message) VALUES ($1,$2,$3) """
-    async with pool.acquire() as conn:
+    async with db.pool.acquire() as conn:
         await conn.execute(query,msg.name,msg.phone,msg.message)
     return JSONResponse({
         "success": True,

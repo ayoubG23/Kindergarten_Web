@@ -1,6 +1,3 @@
-# -----------------------------------------------------------
-# PostgreSQL raw connection test
-# -----------------------------------------------------------
 
 import os
 import asyncpg
@@ -17,10 +14,12 @@ if not DATABASE_URL:
 async def connect_db():
     global pool
     pool = await asyncpg.create_pool(DATABASE_URL,min_size=1,max_size=3)
-    return pool
+    print("db connected")
 
 async def disconnect_db():
+    global pool
     await pool.close()
+    print("db disconnected")
     
 
 def getpool():
